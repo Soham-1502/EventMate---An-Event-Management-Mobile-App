@@ -87,15 +87,12 @@ const TicketCard = ({ ticket, onPress, onAddToCalendar, onContactSupport }) => {
             processedDate = processedDate.replace('+00', '+00:00');
           }
         }
-        
-        console.log('Processed date string:', processedDate);
+      
         date = new Date(processedDate);
       } else {
         date = new Date(dateString);
       }
-      
-      console.log('Parsed date object:', date);
-      console.log('Is valid date:', !isNaN(date.getTime()));
+
       
       if (isNaN(date.getTime())) {
         console.log('Date parsing failed for:', dateString);
@@ -108,7 +105,6 @@ const TicketCard = ({ ticket, onPress, onAddToCalendar, onContactSupport }) => {
         year: 'numeric'
       });
       
-      console.log('Formatted date:', formatted);
       return formatted;
       
     } catch (error) {
@@ -127,9 +123,6 @@ const TicketCard = ({ ticket, onPress, onAddToCalendar, onContactSupport }) => {
   const eventDate = getEventDate();
   const isTicketActive = ticket.status?.toLowerCase() === 'active';
   const isUpcoming = eventDate ? eventDate > new Date() : false;
-
-  console.log(ticket);
-  console.log("Ticket Date:",ticket.purchased_at);
 
   return (
     <>

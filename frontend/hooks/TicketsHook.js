@@ -3,7 +3,6 @@ import { API_URL } from "./APIURL";
 
 export async function BuyTicket({ eventId, userId, quantity }) {
   try {
-    console.log("From Ticket Buy:", userId)
     const response = await fetch(`${API_URL}/events/${eventId}/buyTicket`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

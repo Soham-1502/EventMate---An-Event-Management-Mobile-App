@@ -118,7 +118,6 @@ export async function GetEvents(options = {}) {
             }
         }
 
-        console.log(`Fetching events: ${url}`);
         const response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -204,7 +203,6 @@ export async function GetEventById(eventId, options = {}) {
             }
         }
 
-        console.log(`Fetching event: ${url}`);
         const response = await fetch(url, {
             method: 'GET',
             headers: {
